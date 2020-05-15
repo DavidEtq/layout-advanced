@@ -1,0 +1,164 @@
+.gallery {
+  background: $primary;
+  display: flex;
+  flex-direction: column;
+  min-height: 200px;
+  &.bottom {
+    margin-bottom: 24px;
+  }
+  h2 {
+    color: $white;
+    font-family: "Jost";
+    font-size: 16px;
+    margin-bottom: 0;
+    span {
+      font-family: "Jost";
+      font-weight: bold;
+    }
+    i {
+      font-weight: bold;
+      display: none;
+    }
+  }
+  .boxes {
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+    height: 170px;
+    overflow: hidden;
+    .box {
+      align-items: center;
+      display: flex;
+      cursor: pointer;
+      height: 150px;
+      flex-grow: 1;
+      padding: 0px;
+      margin: 0 1px;
+      transition: transform 0.4s ease;
+      width: 19.8%;
+      &:hover {
+        height: 170px;
+        margin: 0 8px;
+        padding: 10px;
+        transform: scale(1.17);
+        width: 22%;
+        &:first-child {
+          padding-left: 0;
+        }
+        &:last-child {
+          padding-right: 0;
+        }
+      }
+      img {
+        height: 150px;
+        transition: width 0.4s ease;
+        width: 100%;
+      }
+    }
+  }
+}
+@media screen and (max-width: 1280px) {
+  .gallery {
+    .boxes {
+      justify-content: space-between;
+      flex-wrap: wrap;
+      height: 340px;
+      width: 100%;
+      .box {
+        width: 20%;
+        &:nth-child(5) {
+          flex-grow: 2;
+          margin-top: -24px;
+        }
+        &:nth-child(6) {
+          flex-grow: 2;
+          margin-top: -24px;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 1024px) {
+  .gallery {
+    .boxes {
+      justify-content: space-between;
+      flex-wrap: wrap;
+      height: 340px;
+      .box {
+        width: 33%;
+        &:hover {
+          z-index: 4;
+          width: 29%;
+          &:first-child {
+            padding-left: 8px;
+          }
+          &:last-child {
+            padding-right: 8px;
+          }
+        }
+        &.top {
+          margin-top: -20px;
+        }
+        img {
+          &:hover {
+            z-index: 4;
+            width: 284px;
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 900px) {
+  .gallery {
+    .boxes {
+      height: auto;
+      .box {
+        width: 30%;
+        &.top {
+          margin-top: 4px;
+        }
+        img {
+          &:hover {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 500px) {
+  .gallery {
+    .boxes {
+      height: auto;
+      .box {
+        width: 33%;
+        &.top {
+          margin-top: 4px;
+        }
+        img {
+          &:hover {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 400px) {
+  .gallery {
+    .boxes {
+      height: auto;
+      .box {
+        margin-bottom: 4px;
+        width: 50%;
+        &:hover {
+          width: 45%;
+        }
+        &.top {
+          margin-top: 0;
+        }
+      }
+    }
+  }
+}
